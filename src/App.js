@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>jubair</h1>
+      <h1 className='text-3xl'>jubair</h1>
     </div>
   );
 }
