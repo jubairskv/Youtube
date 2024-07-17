@@ -5,7 +5,6 @@ import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { CiSearch } from "react-icons/ci";
 import { cacheResults } from "../utils/searchSlice";
 
-
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [Suggestion, setSuggestion] = useState([]);
@@ -69,9 +68,11 @@ const Header = () => {
       //console.log(json[1]);
 
       //updaet the cache
-      dispatch(cacheResults({
-        [searchQuery]:json[1],
-      }))
+      dispatch(
+        cacheResults({
+          [searchQuery]: json[1],
+        })
+      );
     } catch (err) {
       console.log(err);
     }
@@ -113,8 +114,11 @@ const Header = () => {
           {showSuggestion && (
             <div className="fixed bg-white py-2  w-[36rem] rounded-lg border border-gray-100">
               <ul>
-                {Suggestion.map((s) => (
-                  <li className="px-5 py-2 flex hover:bg-gray-100 ">
+                {Suggestion.map((s, index) => (
+                  <li
+                    className="px-5 py-2 flex hover:bg-gray-100  "
+                    key={index}
+                  >
                     <CiSearch className="mt-[6px] mr-2" />
                     {s}
                   </li>
