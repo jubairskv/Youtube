@@ -6,7 +6,7 @@ import { generateRandomName } from "../utils/helper";
 import { makeRandomMessage } from "../utils/helper";
 
 const LiveChat = () => {
-  const [liveChat, setLiveChat] = useState("");
+  const [liveMessage, setLiveMessage] = useState("");
   const dispatch = useDispatch();
   const chatMessage = useSelector((store) => store.chat.message);
   useEffect(() => {
@@ -36,22 +36,23 @@ const LiveChat = () => {
         </div>
       </div>
       <form
-        className="w-full p-2 ml-2 border border-black"
+        className="w-full p-2 ml-2 border border-black rounded-lg"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(
             addMessage({
               name: "Jubair kasim",
-              message:  liveChat ,
+              message:  liveMessage ,
             })
           );
+          setLiveMessage("");
         }}
       >
         <input
           className="w-[362px]"
           type="text"
-          value={liveChat}
-          onChange={(e) => setLiveChat(e.target.value)}
+          value={liveMessage}
+          onChange={(e) => setLiveMessage(e.target.value)}
         />
         <button className="px-2 mx-2 bg-green-100">Send</button>
       </form>
