@@ -15,10 +15,11 @@ const ButtonList = () => {
     "Trailers",
     "Gadgets",
     "Recently Uploaded",
+    "add",
   ];
 
   return (
-    <div className=" flex whitespace-nowrap ">
+    <div className=" flex whitespace-nowrap">
       {button_list.map((btn_name, index) => (
         <Button key={index} name={btn_name} />
       ))}
