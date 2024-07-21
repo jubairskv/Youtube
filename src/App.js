@@ -31,7 +31,6 @@ function App() {
           <Header />
           <RouterProvider router={appRouter} />
         </h1>
-
         {/**
          *
          *Head
