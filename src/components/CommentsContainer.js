@@ -188,7 +188,7 @@ const commentsData = [
 
 const Comment = ({ data }) => {
   if (!data) return null;
-  const { name, text, replies } = data;
+  const { name, text} = data;
   //console.log(name);
   return (
     <div className="flex  p-3 shadow-sm bg-gray-100 rounded-lg my-2">
