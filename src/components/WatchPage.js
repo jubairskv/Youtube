@@ -9,7 +9,7 @@ const WatchPage = () => {
   // const params = useParams();    //it wont wrok here so that we r going for search params in react-router-dom
   // console.log(params)
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   console.log(searchParams.get("v"));
 
   const dispatch = useDispatch();

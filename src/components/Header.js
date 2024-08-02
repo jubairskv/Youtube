@@ -36,7 +36,7 @@ const Header = () => {
       // clear the data when API call done in setTimeout
       clearTimeout(timer);
     };
-  }, []);          //[searchQuery]
+  });          //[searchQuery]
 
   /**
    * key-i
